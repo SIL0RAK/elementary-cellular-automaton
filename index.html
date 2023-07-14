@@ -25,6 +25,19 @@
   <body>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
     <script src="./bootstrap.js"></script>
+    <div>
+      <form> 
+        <p>Select rule:</p>
+        <input type="radio" onclick="start(30)" id="rule-30" name="rule" value="30">
+        <label for="rule-30">30</label><br>
+        <input type="radio" onclick="start(90)" id="rule-90" name="rule" value="90">
+        <label for="rule-30">90</label><br>  
+        <input type="radio" onclick="start(110)" id="rule-110" name="rule" value="110">
+        <label for="age3">110</label><br>
+        <input type="radio" onclick="start(184)" id="rule-184" name="rule" value="110">
+        <label for="rule-184">184</label><br>
+      </form>
+    </div>
     <canvas id="canvas" width="1000" height="800"></canvas>
   </body>
 </html>

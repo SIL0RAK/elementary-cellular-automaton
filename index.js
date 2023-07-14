@@ -1,3 +1,3 @@
 import * as wasm from "wasm-pkg";
 
-wasm.start()
+window.start = wasm.start;

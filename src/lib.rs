@@ -2,8 +2,8 @@ use std::f64;
 use wasm_bindgen::prelude::*;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
-#[wasm_bindgen(start)]
-async fn start() {
+#[wasm_bindgen]
+pub async fn start(rule: i32) {
     let document: web_sys::Document = web_sys::window().unwrap().document().unwrap();
     let canvas = document.get_element_by_id("canvas").unwrap();
 
@@ -34,6 +34,7 @@ async fn start() {
             current_row,
             &mut current_state,
             &mut next_state,
+            rule,
         );
 
         // sleep for 100ms after each rowW
@@ -58,8 +59,8 @@ fn print_line(
     current_row: i32,
     current_state: &mut Vec<bool>,
     next_state: &mut Vec<bool>,
+    rule: i32,
 ) {
-
     let width: i32 = canvas.client_width();
 
     let mut left: bool;
@@ -106,7 +107,7 @@ fn print_line(
             n |= 1;
         }
                     
-        next_state[i] = (110 & i32::pow(2, n)) > 0;
+        next_state[i] = (rule & i32::pow(2, n)) > 0;
 
         i = i + 1;
     }
