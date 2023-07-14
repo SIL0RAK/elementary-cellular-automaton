@@ -10,6 +10,7 @@ implemented rules:
  - 90
  - 110
  - 184
+ - 250
 
  If you want to test different rule it is possible to do that by applying simple modification to the code.
 
@@ -18,7 +19,7 @@ implemented rules:
  0. install rust and [wasm-pack](https://rustwasm.github.io/wasm-pack/)
  1. `wasm-pack build`
  2. `npm install`
- 3. `npm run start`
+ 3. `npm run build`
 
 ## Purpose
 
