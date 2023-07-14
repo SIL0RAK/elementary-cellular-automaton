@@ -28,17 +28,19 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    steps:
+    steps:  
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Install dependencies
         run: npm install
 
       - name: Build webpack project
         run: npm run build
         
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
