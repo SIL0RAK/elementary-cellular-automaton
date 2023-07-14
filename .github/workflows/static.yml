@@ -32,10 +32,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
+      - uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: 'latest'
+        
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          
+      - name: Build wasm package
+        run: wasm-pack build
         
       - name: Install dependencies
         run: npm install
